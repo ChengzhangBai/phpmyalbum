@@ -50,7 +50,7 @@ if (isset($_POST['btnReset'])) {
             move_uploaded_file($fileTempPath, $filePathName);//SAVE to original folder
             $imageDetails = getimagesize($filePathName);
             if ($imageDetails && in_array($imageDetails[2], $supportedImageTypes)) {
-                resamplePicture($filePathName, ALBUM_PICTURES_DIR, IMAGE_MAX_WIDTH, IMAGE_MAX_HEIGHT);
+                //resamplePicture($filePathName, ALBUM_PICTURES_DIR, IMAGE_MAX_WIDTH, IMAGE_MAX_HEIGHT);
                 CreateWaterMark($filePathName, $waterMarkFilePath, GROUP_NAME,4);//1-logo top left, text bottom right; 4:logo bottom right
                 //watermarkImage($filePathName, $waterMarkFilePath, GROUP_NAME,1);//1,top left, 2: 4.center
                 resamplePicture($filePathName, THUMBNAILS_DIR, THUMB_MAX_WIDTH, THUMB_MAX_HEIGHT);
